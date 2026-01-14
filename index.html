@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nuestra Boda Civil</title>
 
-<!-- Fuentes elegantes -->
+<!-- Fuentes -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <!-- Iconos -->
@@ -27,38 +27,36 @@ body {
     padding: 40px 20px;
 }
 
-/* Títulos */
-.titulo-principal {
+/* Título y frase (MISMO ESTILO) */
+.titulo-principal,
+.frase {
     font-size: 2.5rem;
     letter-spacing: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .fecha {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 /* Nombres */
-.nombres {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem;
-    margin: 10px 0;
+.nombres-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 40px;
 }
 
-/* Apellidos */
-.apellidos {
-    font-size: 1.4rem;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
+.nombre {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
 }
 
-/* Frase */
-.frase {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.8rem;
-    margin-bottom: 50px;
+.apellido {
+    font-size: 1.3rem;
     letter-spacing: 2px;
+    margin-top: 5px;
 }
 
 /* Foto principal */
@@ -84,8 +82,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
 .foto {
@@ -113,11 +110,6 @@ body {
     text-decoration: none;
 }
 
-.descargar:hover {
-    background: white;
-    color: black;
-}
-
 /* Música */
 .music-container {
     position: fixed;
@@ -140,7 +132,6 @@ body {
 .music-text {
     margin-top: 6px;
     font-size: 0.8rem;
-    letter-spacing: 1px;
 }
 
 /* Footer */
@@ -166,82 +157,80 @@ footer h2 {
     font-size: 1.8rem;
 }
 
-.redes a:hover {
-    color: #e1306c;
-}
-
 /* Responsive */
 @media(max-width:600px){
-    .nombres { font-size: 2.8rem; }
-    .frase { font-size: 2.2rem; }
+    .nombres-container {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 MÚSICA MP3 AUTOPLAY -->
+<!-- Música MP3 -->
 <audio id="musica" autoplay loop>
     <source src="musica_boda.mp3" type="audio/mpeg">
 </audio>
 
 <!-- Botón música -->
 <div class="music-container">
-    <button class="music-btn" onclick="toggleMusic()">
-        <i class="fa-solid fa-play"></i>
-    </button>
+    <button class="music-btn" onclick="toggleMusic()">▶</button>
     <div class="music-text">¡ESCUCHAME!</div>
 </div>
 
 <div class="overlay">
 
-<!-- TÍTULOS -->
+<!-- TÍTULO -->
 <div class="titulo-principal">Nuestra Boda Civil</div>
 <div class="fecha">13 / 01 / 2025</div>
 
-<div class="nombres">Cristian & Liseth</div>
-<div class="apellidos">Paucar & Pilamunga</div>
+<!-- NOMBRES -->
+<div class="nombres-container">
+    <div>
+        <div class="nombre">Cristian</div>
+        <div class="apellido">Paucar</div>
+    </div>
+    <div>
+        <div class="nombre">Liseth</div>
+        <div class="apellido">Pilamunga</div>
+    </div>
+</div>
 
 <!-- FRASE -->
 <div class="frase">DOS VIDAS, UN SOLO AMOR</div>
 
-<!-- Foto principal -->
+<!-- FOTO PRINCIPAL -->
 <div class="foto-principal">
     <a class="descargar" href="Kuti_PRO (1).jpg" download>
         <i class="fa-solid fa-download"></i>
     </a>
-    <img src="Kuti_PRO (1).jpg" alt="Foto principal">
+    <img src="Kuti_PRO (1).jpg">
 </div>
 
-<!-- Galería -->
+<!-- GALERÍA -->
 <div class="galeria">
 <script>
 for(let i=2;i<=24;i++){
 document.write(`
 <div class="foto">
-    <a class="descargar" href="Kuti_PRO (${i}).jpg" download>
-        <i class="fa-solid fa-download"></i>
-    </a>
-    <img src="Kuti_PRO (${i}).jpg" alt="Foto ${i}">
+<a class="descargar" href="Kuti_PRO (${i}).jpg" download>
+<i class="fa-solid fa-download"></i>
+</a>
+<img src="Kuti_PRO (${i}).jpg">
 </div>
 `);
 }
 </script>
 </div>
 
-<!-- Footer -->
 <footer>
 <h2>KUTI PRODUCCIONES</h2>
 <div class="redes">
-    <a href="https://www.instagram.com/kuti.producciones?igsh=MTMwNHZvODg0c29rcA==" target="_blank">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://www.facebook.com/KUTI.producciones" target="_blank">
-        <i class="fa-brands fa-facebook"></i>
-    </a>
-    <a href="https://www.tiktok.com/@kutiproducciones?_r=1&_t=ZM-933avldke52" target="_blank">
-        <i class="fa-brands fa-tiktok"></i>
-    </a>
+<a href="https://www.instagram.com/kuti.producciones?igsh=MTMwNHZvODg0c29rcA==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.facebook.com/KUTI.producciones" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@kutiproducciones?_r=1&_t=ZM-933avldke52" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
 </div>
 </footer>
 
@@ -250,15 +239,10 @@ document.write(`
 <script>
 const musica = document.getElementById("musica");
 musica.volume = 0.5;
-
-let reproduciendo = true;
-function toggleMusic() {
-    if (reproduciendo) {
-        musica.pause();
-    } else {
-        musica.play();
-    }
-    reproduciendo = !reproduciendo;
+let play = true;
+function toggleMusic(){
+    play ? musica.pause() : musica.play();
+    play = !play;
 }
 </script>
 
