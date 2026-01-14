@@ -84,35 +84,55 @@ h1 {
     color: black;
 }
 
-/* Música */
-.boton-musica {
+/* Botón música */
+.music-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.music-btn {
     background: rgba(0,0,0,0.7);
     border: none;
     color: white;
-    font-size: 22px;
-    padding: 15px;
+    font-size: 26px;
+    padding: 16px 18px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 1000;
+}
+
+.music-text {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
 /* Footer */
 footer {
-    margin-top: 60px;
+    margin-top: 70px;
     padding: 20px;
-    font-size: 1.2rem;
 }
 
-footer a {
+footer h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes a {
     color: white;
-    margin-left: 10px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
-footer a:hover {
+.redes a:hover {
     color: #e1306c;
 }
 
@@ -125,14 +145,16 @@ footer a:hover {
 
 <body>
 
-<!-- Música autoplay (permitida por navegador, inicia mute) -->
-<iframe
-src="https://www.youtube.com/embed/7tyNhffgmYI?autoplay=1&mute=1&loop=1&playlist=7tyNhffgmYI&controls=0"
-allow="autoplay"
-style="width:0;height:0;border:0;position:absolute;">
-</iframe>
+<!-- Spotify oculto (se carga al presionar play) -->
+<div id="spotify-player"></div>
 
-<button class="boton-musica" onclick="activarSonido()">🎵</button>
+<!-- Botón música -->
+<div class="music-container">
+    <button class="music-btn" onclick="playSpotify()">
+        <i class="fa-solid fa-play"></i>
+    </button>
+    <div class="music-text">¡ESCUCHAME!</div>
+</div>
 
 <div class="overlay">
 
@@ -164,18 +186,30 @@ document.write(`
 
 <!-- Footer -->
 <footer>
-KUTI PRODUCCIONES
-<a href="https://www.instagram.com/kuti.producciones?igsh=MTMwNHZvODg0c29rcA==" target="_blank">
-<i class="fa-brands fa-instagram"></i>
-</a>
+<h2>KUTI PRODUCCIONES</h2>
+<div class="redes">
+    <a href="https://www.instagram.com/kuti.producciones?igsh=MTMwNHZvODg0c29rcA==" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/KUTI.producciones" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://www.tiktok.com/@kutiproducciones?_r=1&_t=ZM-933avldke52" target="_blank">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+</div>
 </footer>
 
 </div>
 
 <script>
-function activarSonido(){
-    const iframe=document.querySelector("iframe");
-    iframe.src=iframe.src.replace("mute=1","mute=0");
+function playSpotify(){
+    document.getElementById("spotify-player").innerHTML = `
+    <iframe style="width:0;height:0;border:0;"
+    src="https://open.spotify.com/embed/track/5uMBzhcN4LybrqyZxbf8P3?utm_source=generator&autoplay=1"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+    `;
 }
 </script>
 
