@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Galería de Boda | Cristian & Liseth</title>
+
+<!-- Íconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Tipografías elegantes -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Playfair Display', serif;
+        background-image: url("fondo_boda2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #4a2e2e;
+        text-align: center;
+    }
+
+    .titulo {
+        margin-top: 40px;
+        font-family: 'Great Vibes', cursive;
+        font-size: 4rem;
+        color: #5d3b3b;
+        text-shadow: 1px 1px 6px white;
+    }
+
+    .subtitulo {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .fecha {
+        font-size: 1rem;
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+    }
+
+    .boton-descarga-todo {
+        margin: 20px auto;
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        background-color: #c79d7c;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    .boton-descarga-todo:hover {
+        background-color: #a87f60;
+    }
+
+    .galeria {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 40px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .contenedor-imagen {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 15px;
+        border-radius: 18px;
+        box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
+    }
+
+    .contenedor-imagen img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .boton-descargar {
+        margin-top: 12px;
+        padding: 10px 25px;
+        background-color: #8b5e5e;
+        color: white;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    .boton-descargar i {
+        margin-right: 8px;
+    }
+
+    .boton-descargar:hover {
+        background-color: #6f4646;
+    }
+</style>
+</head>
+
+<body>
+
+<h1 class="titulo">Cristian & Liseth</h1>
+<p class="subtitulo">Un amor bendecido por Dios, un recuerdo eterno</p>
+<p class="fecha">13 · 01 · 2026</p>
+
+<!-- Descargar paquete -->
+<a class="boton-descarga-todo" href="TODAS_FOTOS_BODA.zip" download>
+    <i class="fa-solid fa-download"></i> Descargar todas las fotos
+</a>
+
+<div class="galeria" id="galeria"></div>
+
+<script>
+    const contenedor = document.getElementById("galeria");
+    const totalFotos = 24;
+
+    for (let i = 1; i <= totalFotos; i++) {
+        const cont = document.createElement("div");
+        cont.classList.add("contenedor-imagen");
+
+        const img = document.createElement("img");
+        img.src = `Kuti_PRO${i}.jpeg`;
+
+        const boton = document.createElement("a");
+        boton.classList.add("boton-descargar");
+        boton.href = `Kuti_PRO${i}.jpeg`;
+        boton.download = `Cristian_Liseth_${i}.jpeg`;
+        boton.innerHTML = `<i class="fa-solid fa-cloud-arrow-down"></i> Descargar foto`;
+
+        cont.appendChild(img);
+        cont.appendChild(boton);
+        contenedor.appendChild(cont);
+    }
+</script>
+
+</body>
+</html>
