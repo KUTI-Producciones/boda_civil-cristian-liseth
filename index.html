@@ -2,147 +2,180 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Boda Cristian & Liseth</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristian & Liseth</title>
 
-<!-- Tipografías elegantes -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<!-- Google Font elegante -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 body {
     margin: 0;
     font-family: 'Playfair Display', serif;
-    background: #f7f3ef;
-    color: #4a2e2e;
+    background: url('fondo_boda2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
     text-align: center;
 }
 
-/* TÍTULOS */
+.overlay {
+    background: rgba(0,0,0,0.55);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
 h1 {
-    margin-top: 30px;
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.6rem;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
 }
 
-h2 {
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.fecha {
-    font-size: 1rem;
-    margin-bottom: 25px;
-}
-
-/* BOTÓN ZIP */
-.boton-descarga-todo {
-    margin: 25px auto;
-    padding: 15px 35px;
-    font-size: 1.1rem;
-    background-color: #b68b6a;
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-/* FOTO PRINCIPAL */
-.principal {
+/* Foto principal */
+.foto-principal {
     max-width: 900px;
-    margin: 40px auto;
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-}
-
-.principal img {
-    width: 100%;
-    display: block;
-}
-
-/* GALERÍA */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    padding: 30px;
-    max-width: 1200px;
     margin: auto;
-}
-
-.contenedor-imagen {
     position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
-.contenedor-imagen img {
+.foto-principal img {
     width: 100%;
-    display: block;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
 }
 
-/* ICONO DE DESCARGA */
-.icono-descarga {
+/* Galería */
+.galeria {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foto {
+    position: relative;
+}
+
+.foto img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* Icono descargar */
+.descargar {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(0,0,0,0.65);
-    color: white;
-    font-size: 26px;
-    padding: 10px 12px;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 8px;
     border-radius: 50%;
+    color: white;
     text-decoration: none;
-    transition: transform 0.2s, background 0.2s;
 }
 
-.icono-descarga:hover {
-    background: rgba(182,139,106,0.9);
-    transform: scale(1.1);
+.descargar:hover {
+    background: white;
+    color: black;
+}
+
+/* Música */
+.boton-musica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    border: none;
+    color: white;
+    font-size: 22px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+footer a {
+    color: white;
+    margin-left: 10px;
+    font-size: 1.6rem;
+}
+
+footer a:hover {
+    color: #e1306c;
+}
+
+/* Responsive */
+@media(max-width:600px){
+    h1 { font-size: 2.2rem; }
 }
 </style>
 </head>
 
 <body>
 
-<h1>Cristian & Liseth</h1>
-<h2>Boda Civil</h2>
-<div class="fecha">📅 13 de enero de 2026</div>
+<!-- Música autoplay (permitida por navegador, inicia mute) -->
+<iframe
+src="https://www.youtube.com/embed/7tyNhffgmYI?autoplay=1&mute=1&loop=1&playlist=7tyNhffgmYI&controls=0"
+allow="autoplay"
+style="width:0;height:0;border:0;position:absolute;">
+</iframe>
 
-<a class="boton-descarga-todo" href="TODAS_FOTOS_BODA.zip" download>
-    Descargar todas las fotos
-</a>
+<button class="boton-musica" onclick="activarSonido()">🎵</button>
 
-<!-- FOTO PRINCIPAL -->
-<div class="principal">
-    <img src="Kuti_PRO_1.jpg" alt="Foto principal">
-    <a class="icono-descarga" href="Kuti_PRO_1.jpg" download>⬇</a>
+<div class="overlay">
+
+<h1>Cristian Paucar & Liseth Pilamunga</h1>
+
+<!-- Foto principal -->
+<div class="foto-principal">
+    <a class="descargar" href="Kuti_PRO (1).jpg" download>
+        <i class="fa-solid fa-download"></i>
+    </a>
+    <img src="Kuti_PRO (1).jpg" alt="Foto principal">
 </div>
 
-<!-- GALERÍA RESTANTE -->
-<div class="galeria" id="galeria"></div>
+<!-- Galería -->
+<div class="galeria">
+<script>
+for(let i=2;i<=24;i++){
+document.write(`
+<div class="foto">
+    <a class="descargar" href="Kuti_PRO (${i}).jpg" download>
+        <i class="fa-solid fa-download"></i>
+    </a>
+    <img src="Kuti_PRO (${i}).jpg" alt="Foto ${i}">
+</div>
+`);
+}
+</script>
+</div>
+
+<!-- Footer -->
+<footer>
+KUTI PRODUCCIONES
+<a href="https://www.instagram.com/kuti.producciones?igsh=MTMwNHZvODg0c29rcA==" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+</footer>
+
+</div>
 
 <script>
-const galeria = document.getElementById("galeria");
-const totalFotos = 24;
-
-// Empieza desde la foto 2
-for (let i = 2; i <= totalFotos; i++) {
-    const contenedor = document.createElement("div");
-    contenedor.className = "contenedor-imagen";
-
-    const img = document.createElement("img");
-    img.src = `Kuti_PRO_${i}.jpg`;
-
-    const descarga = document.createElement("a");
-    descarga.href = `Kuti_PRO_${i}.jpg`;
-    descarga.download = `Kuti_PRO_${i}.jpg`;
-    descarga.className = "icono-descarga";
-    descarga.innerHTML = "⬇";
-
-    contenedor.appendChild(img);
-    contenedor.appendChild(descarga);
-    galeria.appendChild(contenedor);
+function activarSonido(){
+    const iframe=document.querySelector("iframe");
+    iframe.src=iframe.src.replace("mute=1","mute=0");
 }
 </script>
 
