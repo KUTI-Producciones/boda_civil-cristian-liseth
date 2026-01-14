@@ -2,138 +2,148 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Galería de Boda | Cristian & Liseth</title>
-
-<!-- Íconos -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>Boda Cristian & Liseth</title>
 
 <!-- Tipografías elegantes -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        font-family: 'Playfair Display', serif;
-        background-image: url("fondo_boda2.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        color: #4a2e2e;
-        text-align: center;
-    }
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background: #f7f3ef;
+    color: #4a2e2e;
+    text-align: center;
+}
 
-    .titulo {
-        margin-top: 40px;
-        font-family: 'Great Vibes', cursive;
-        font-size: 4rem;
-        color: #5d3b3b;
-        text-shadow: 1px 1px 6px white;
-    }
+/* TÍTULOS */
+h1 {
+    margin-top: 30px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.6rem;
+}
 
-    .subtitulo {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-    }
+h2 {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
 
-    .fecha {
-        font-size: 1rem;
-        letter-spacing: 3px;
-        margin-bottom: 30px;
-    }
+.fecha {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
 
-    .boton-descarga-todo {
-        margin: 20px auto;
-        padding: 15px 30px;
-        font-size: 1.1rem;
-        background-color: #c79d7c;
-        color: white;
-        border-radius: 30px;
-        text-decoration: none;
-        display: inline-block;
-        transition: 0.3s;
-    }
+/* BOTÓN ZIP */
+.boton-descarga-todo {
+    margin: 25px auto;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    background-color: #b68b6a;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+}
 
-    .boton-descarga-todo:hover {
-        background-color: #a87f60;
-    }
+/* FOTO PRINCIPAL */
+.principal {
+    max-width: 900px;
+    margin: 40px auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
 
-    .galeria {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-        padding: 40px;
-        max-width: 1200px;
-        margin: auto;
-    }
+.principal img {
+    width: 100%;
+    display: block;
+}
 
-    .contenedor-imagen {
-        background: rgba(255, 255, 255, 0.8);
-        padding: 15px;
-        border-radius: 18px;
-        box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
-    }
+/* GALERÍA */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
 
-    .contenedor-imagen img {
-        width: 100%;
-        border-radius: 15px;
-        box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
-    }
+.contenedor-imagen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
 
-    .boton-descargar {
-        margin-top: 12px;
-        padding: 10px 25px;
-        background-color: #8b5e5e;
-        color: white;
-        border-radius: 25px;
-        text-decoration: none;
-        display: inline-block;
-        transition: 0.3s;
-    }
+.contenedor-imagen img {
+    width: 100%;
+    display: block;
+}
 
-    .boton-descargar i {
-        margin-right: 8px;
-    }
+/* ICONO DE DESCARGA */
+.icono-descarga {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0,0,0,0.65);
+    color: white;
+    font-size: 26px;
+    padding: 10px 12px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
 
-    .boton-descargar:hover {
-        background-color: #6f4646;
-    }
+.icono-descarga:hover {
+    background: rgba(182,139,106,0.9);
+    transform: scale(1.1);
+}
 </style>
 </head>
 
 <body>
 
-<h1 class="titulo">Cristian & Liseth</h1>
-<p class="subtitulo">Un amor bendecido por Dios, un recuerdo eterno</p>
-<p class="fecha">13 · 01 · 2026</p>
+<h1>Cristian & Liseth</h1>
+<h2>Boda Civil</h2>
+<div class="fecha">📅 13 de enero de 2026</div>
 
-<!-- Descargar paquete -->
 <a class="boton-descarga-todo" href="TODAS_FOTOS_BODA.zip" download>
-    <i class="fa-solid fa-download"></i> Descargar todas las fotos
+    Descargar todas las fotos
 </a>
 
+<!-- FOTO PRINCIPAL -->
+<div class="principal">
+    <img src="Kuti_PRO_1.jpg" alt="Foto principal">
+    <a class="icono-descarga" href="Kuti_PRO_1.jpg" download>⬇</a>
+</div>
+
+<!-- GALERÍA RESTANTE -->
 <div class="galeria" id="galeria"></div>
 
 <script>
-    const contenedor = document.getElementById("galeria");
-    const totalFotos = 24;
+const galeria = document.getElementById("galeria");
+const totalFotos = 24;
 
-    for (let i = 1; i <= totalFotos; i++) {
-        const cont = document.createElement("div");
-        cont.classList.add("contenedor-imagen");
+// Empieza desde la foto 2
+for (let i = 2; i <= totalFotos; i++) {
+    const contenedor = document.createElement("div");
+    contenedor.className = "contenedor-imagen";
 
-        const img = document.createElement("img");
-        img.src = `Kuti_PRO${i}.jpeg`;
+    const img = document.createElement("img");
+    img.src = `Kuti_PRO_${i}.jpg`;
 
-        const boton = document.createElement("a");
-        boton.classList.add("boton-descargar");
-        boton.href = `Kuti_PRO${i}.jpeg`;
-        boton.download = `Cristian_Liseth_${i}.jpeg`;
-        boton.innerHTML = `<i class="fa-solid fa-cloud-arrow-down"></i> Descargar foto`;
+    const descarga = document.createElement("a");
+    descarga.href = `Kuti_PRO_${i}.jpg`;
+    descarga.download = `Kuti_PRO_${i}.jpg`;
+    descarga.className = "icono-descarga";
+    descarga.innerHTML = "⬇";
 
-        cont.appendChild(img);
-        cont.appendChild(boton);
-        contenedor.appendChild(cont);
-    }
+    contenedor.appendChild(img);
+    contenedor.appendChild(descarga);
+    galeria.appendChild(contenedor);
+}
 </script>
 
 </body>
