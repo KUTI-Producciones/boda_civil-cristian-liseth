@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cristian & Liseth</title>
 
-<!-- Google Font elegante -->
+<!-- Fuente elegante -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
+<!-- Iconos -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
@@ -67,7 +67,7 @@ h1 {
     box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
-/* Icono descargar */
+/* Descargar */
 .descargar {
     position: absolute;
     top: 10px;
@@ -84,7 +84,7 @@ h1 {
     color: black;
 }
 
-/* Botón música */
+/* Música */
 .music-container {
     position: fixed;
     bottom: 20px;
@@ -145,12 +145,14 @@ footer h2 {
 
 <body>
 
-<!-- Spotify oculto (se carga al presionar play) -->
-<div id="spotify-player"></div>
+<!-- 🎵 MÚSICA MP3 AUTOPLAY REAL -->
+<audio id="musica" autoplay loop>
+    <source src="musica_boda.mp3" type="audio/mpeg">
+</audio>
 
 <!-- Botón música -->
 <div class="music-container">
-    <button class="music-btn" onclick="playSpotify()">
+    <button class="music-btn" onclick="toggleMusic()">
         <i class="fa-solid fa-play"></i>
     </button>
     <div class="music-text">¡ESCUCHAME!</div>
@@ -203,13 +205,17 @@ document.write(`
 </div>
 
 <script>
-function playSpotify(){
-    document.getElementById("spotify-player").innerHTML = `
-    <iframe style="width:0;height:0;border:0;"
-    src="https://open.spotify.com/embed/track/5uMBzhcN4LybrqyZxbf8P3?utm_source=generator&autoplay=1"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-    </iframe>
-    `;
+const musica = document.getElementById("musica");
+musica.volume = 0.5; // volumen suave
+
+let reproduciendo = true;
+function toggleMusic() {
+    if (reproduciendo) {
+        musica.pause();
+    } else {
+        musica.play();
+    }
+    reproduciendo = !reproduciendo;
 }
 </script>
 
